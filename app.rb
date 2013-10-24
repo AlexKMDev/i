@@ -14,7 +14,7 @@ class ImagesApp < Sinatra::Base
     image.valid? && ALLOWED.include?(image.mime_type)
   end
 
-  def valid_request? params
+  def valid_request?(params)
     params['media'].is_a?(Hash) && File.exists?(params['media'][:tempfile])
   end
 
@@ -34,7 +34,7 @@ class ImagesApp < Sinatra::Base
     image.write fullpath
     File.chmod(0755, fullpath)
 
-    { url: "http://i.anakros.me/" + filename }.to_json
+    { url: 'http://i.anakros.me/' + filename }.to_json
   end
 
   error do
