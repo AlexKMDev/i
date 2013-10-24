@@ -4,14 +4,9 @@ require 'json'
 require 'securerandom'
 
 class ImagesApp < Sinatra::Base
-  ALLOWED = %w(image/png image/bmp image/gif image/jpeg)
 
   def generate_name
     SecureRandom.hex
-  end
-
-  def valid?(image)
-    image.valid? && ALLOWED.include?(image.mime_type)
   end
 
   def valid_request?(params)
