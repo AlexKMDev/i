@@ -24,4 +24,4 @@ doc/
 *.bmp
 log
 
-.unicorn.pid
+unicorn.pid

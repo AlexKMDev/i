@@ -18,7 +18,7 @@ app_user="anakros"
 app_name="Images"
 unicorn_conf="$app_root/unicorn.rb"
 web_server_pid_path="$app_root/unicorn.pid"
-web_server_socket_path="$app_root/.unicorn.socket"
+web_server_socket_path="$app_root/unicorn.sock"
 
 ### functions
 
