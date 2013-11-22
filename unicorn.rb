@@ -1,6 +1,6 @@
 worker_processes 1
 
-@dir = '/var/www/i.anakros.me'
+@dir = File.dirname(__FILE__)
 working_directory @dir
 
 listen "#{@dir}/unicorn.sock", :backlog => 64
