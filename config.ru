@@ -3,12 +3,9 @@ $: << File.dirname(__FILE__)
 require 'rubygems'
 require 'app'
 
-set :root, File.dirname(__FILE__)
-set :static, '/images'
-set :run, false
-set :env, :production
-set :server, :thin
-set :raise_errors, false
-File.mkdir 'images' unless File.exists? 'images'
+root_dir = File.dirname(__FILE__)
+
+ImagesApp::set :app_url, 'http://i.anakros.me'
+ImagesApp::set :upload, "#{root_dir}/images"
 
 run ImagesApp
