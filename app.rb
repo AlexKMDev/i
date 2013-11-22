@@ -5,12 +5,14 @@ require 'securerandom'
 
 class ImagesApp < Sinatra::Base
 
-  def generate_name
-    SecureRandom.hex
-  end
+  helpers do
+    def generate_name
+      SecureRandom.hex
+    end
 
-  def valid_request?(params)
-    params['media'].is_a?(Hash) && File.exists?(params['media'][:tempfile])
+    def valid_request?(params)
+      params['media'].is_a?(Hash) && File.exists?(params['media'][:tempfile])
+    end
   end
 
   post '/upload' do
@@ -21,7 +23,7 @@ class ImagesApp < Sinatra::Base
     begin
       image = MiniMagick::Image.read(tempfile.read)
     rescue MiniMagick::Invalid
-      halt 415, 'The wrong image.'
+      halt 415, 'Wrong image.'
     end
 
     filename = "#{generate_name}.#{image['format'].downcase}"
@@ -30,10 +32,6 @@ class ImagesApp < Sinatra::Base
     File.chmod(0755, fullpath)
 
     { url: 'http://i.anakros.me/' + filename }.to_json
-  end
-
-  error do
-    'Something bad happened...'
   end
 
   run! if __FILE__ == $PROGRAM_NAME
