@@ -11,7 +11,7 @@
 ### END INIT INFO
 
 ### configuration
-RAILS_ENV="production"
+RACK_ENV="production"
 
 app_root="/var/www/i.anakros.me"
 app_user="anakros"
