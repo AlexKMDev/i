@@ -1,4 +1,4 @@
-$: << File.dirname(__FILE__)
+$LOAD_PATH << File.dirname(__FILE__)
 
 ENV['RACK_ENV'] ||= 'test'
 
@@ -13,8 +13,8 @@ describe ImagesApp do
     ImagesApp
   end
 
-  ImagesApp::set :app_url, 'http://i.anakros.me'
-  ImagesApp::set :upload, "#{File.dirname(__FILE__)}/images"
+  ImagesApp.set :app_url, 'http://i.anakros.me'
+  ImagesApp.set :upload, "#{File.dirname(__FILE__)}/images"
 
   it 'should invalid request when upload image with not "media" name in request' do
     file = Rack::Test::UploadedFile.new 'images/test_fail.png', 'image/png'
