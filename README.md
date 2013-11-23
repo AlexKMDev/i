@@ -1,4 +1,4 @@
-Small image upload service
+Small image upload service [![Build Status](https://travis-ci.org/Anakros/i.anakros.me.png)](https://travis-ci.org/Anakros/i.anakros.me)
 ============
 
 Demo: http://i.anakros.me/upload
