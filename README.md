@@ -1,7 +1,7 @@
-Small image upload service [![Build Status](https://travis-ci.org/Anakros/i.anakros.me.png)](https://travis-ci.org/Anakros/i.anakros.me)
+Small upload service [![Build Status](https://travis-ci.org/Anakros/i.anakros.me.png)](https://travis-ci.org/Anakros/i.anakros.me)
 ============
 
-Demo: http://i.anakros.me/upload
+Demo: http://i.anakros.me
 
 1. clone repository
 2. ```$ bundle install && unicorn -D -p 3000```
