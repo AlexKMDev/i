@@ -14,10 +14,10 @@ describe ImagesApp do
   end
 
   ImagesApp.set :app_url, 'http://i.anakros.me'
-  ImagesApp.set :upload, "#{File.dirname(__FILE__)}/images"
+  ImagesApp.set :static, "#{File.dirname(__FILE__)}/public"
 
   it 'should invalid request when upload image with not "media" name in request' do
-    file = Rack::Test::UploadedFile.new 'images/test_fail.png', 'image/png'
+    file = Rack::Test::UploadedFile.new "#{app.settings.static}/test_fail.png", 'image/png'
     post '/upload', not_media: file
 
     expect(last_response.status).to eql(415)
@@ -25,7 +25,7 @@ describe ImagesApp do
   end
 
   it 'should wrong image when upload invalid image' do
-    file = Rack::Test::UploadedFile.new 'images/test_fail.png', 'image/png'
+    file = Rack::Test::UploadedFile.new "#{app.settings.static}/test_fail.png", 'image/png'
     post '/upload', media: file
 
     expect(last_response.status).to eql(415)
@@ -33,7 +33,7 @@ describe ImagesApp do
   end
 
   it 'should return url when upload test_ok.png' do
-    file = Rack::Test::UploadedFile.new 'images/test_ok.png', 'image/png'
+    file = Rack::Test::UploadedFile.new "#{app.settings.static}/test_ok.png", 'image/png'
     post '/upload', media: file
 
     expect(last_response).to be_ok

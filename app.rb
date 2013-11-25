@@ -13,7 +13,7 @@ class ImagesApp < Sinatra::Base
     end
 
     def make_upload_folder
-      File.mkdir settings.upload unless File.exist? settings.upload
+      File.mkdir settings.static unless File.exist? settings.static
     end
 
     def valid_request?(params)
@@ -25,7 +25,7 @@ class ImagesApp < Sinatra::Base
     end
 
     def get_fullpath
-      @fullpath = "#{settings.upload}/#{get_filename}"
+      @fullpath = "#{settings.static}/#{get_filename}"
     end
 
     def save
