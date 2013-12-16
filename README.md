@@ -1,4 +1,4 @@
-Small upload service [![Build Status](https://travis-ci.org/Anakros/i.anakros.me.png)](https://travis-ci.org/Anakros/i.anakros.me)
+SIUS — small image uploading service [![Build Status](https://travis-ci.org/Anakros/i.png)](https://travis-ci.org/Anakros/i)
 ============
 
 Demo: http://i.anakros.me
