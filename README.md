@@ -1,7 +1,7 @@
 SIUS — small image uploading service
 ============
 
-[![Build Status](https://travis-ci.org/Anakros/i.png)](https://travis-ci.org/Anakros/i)
+[![Build Status](https://travis-ci.org/Anakros/i.png)](https://travis-ci.org/Anakros/i) [![Coverage Status](https://coveralls.io/repos/Anakros/i/badge.png?branch=master)](https://coveralls.io/r/Anakros/i?branch=master)
 
 Demo: ```curl --form "media=@test.gif" http://i.anakros.me/upload```
 
