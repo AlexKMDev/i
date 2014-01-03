@@ -4,7 +4,10 @@ ENV['RACK_ENV'] ||= 'test'
 
 require 'rack/test'
 require 'rspec'
+require 'coveralls'
 require 'app'
+
+Coveralls.wear!
 
 describe ImagesApp do
   include Rack::Test::Methods
