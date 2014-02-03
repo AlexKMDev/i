@@ -16,7 +16,7 @@ RACK_ENV="production"
 app_root="/var/www/i.anakros.me"
 app_user="anakros"
 app_name="Images"
-unicorn_conf="$app_root/unicorn.rb"
+unicorn_conf="$app_root/config/unicorn.rb"
 web_server_pid_path="$app_root/unicorn.pid"
 web_server_socket_path="$app_root/unicorn.sock"
 
